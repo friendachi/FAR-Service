@@ -22,11 +22,23 @@ export function MobileMenu({ summary, children, className }: { summary: ReactNod
       if (!d?.open) return;
       if (e instanceof KeyboardEvent ? e.key === "Escape" : !d.contains(e.target as Node)) d.open = false;
     };
+    // Scrolling the page also closes it, so the open menu never sits over the content.
+    const startY = { v: 0 };
+    const onToggle = () => { startY.v = window.scrollY; };
+    const onScroll = () => {
+      const d = ref.current;
+      if (d?.open && Math.abs(window.scrollY - startY.v) > 24) d.open = false;
+    };
+    const d = ref.current;
+    d?.addEventListener("toggle", onToggle);
     document.addEventListener("pointerdown", close);
     document.addEventListener("keydown", close);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
+      d?.removeEventListener("toggle", onToggle);
       document.removeEventListener("pointerdown", close);
       document.removeEventListener("keydown", close);
+      window.removeEventListener("scroll", onScroll);
     };
   }, []);
 
