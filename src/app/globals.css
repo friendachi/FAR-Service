@@ -1,0 +1,340 @@
+@import "tailwindcss";
+
+/*
+  FAR Service — highway guide sign world.
+  Sign green ground + white keyline, deep green shell, reflective yellow for the one primary action.
+  Light only: used in offices and on outdoor yards in direct sun.
+*/
+
+:root {
+  color-scheme: light;
+}
+
+/* Thai / English: both are in the HTML, one is shown (see src/lib/i18n.ts) */
+.i18n-th, .i18n-en { display: contents; }
+.i18n-en { display: none; }
+html[data-lang="en"] .i18n-th { display: none; }
+html[data-lang="en"] .i18n-en { display: contents; }
+
+@theme {
+  /* Brand: FAR logo green and red (business card) */
+  --color-sign: #8ec33e;        /* logo green — surfaces, bars, borders */
+  --color-sign-hover: #7db12f;
+  --color-on-sign: #1b2a09;     /* text on logo green */
+  --color-on-sign-2: #34490f;
+  --color-grass: #4a7812;       /* green for text and icons on white (AA) */
+  --color-sign-deep: #2a420f;   /* deep green: sidebar, footer */
+  --color-sign-ink: #e6f2d6;    /* text on deep green */
+  --color-sign-tint: #eaf5dc;
+  --color-sign-wash: #f5faee;
+  --color-reflect: #8f0203;     /* logo red — the one primary action */
+  --color-reflect-hover: #730102;
+  --color-reflect-tint: #fbe9e9;
+
+  --color-ink: #17201b;
+  --color-ink-2: #46534b;
+  --color-ink-3: #6a776f;
+  --color-line: #d9e1dc;
+  --color-line-strong: #b9c6be;
+  --color-paper: #ffffff;
+  --color-ground: #f5f7f5;
+
+  --color-ok: #4a7812;
+  --color-info: #1d5fbf;
+  --color-info-tint: #e6eefa;
+  --color-warn: #a35a00;
+  --color-warn-tint: #fdf0dc;
+  --color-danger: #b42318;
+  --color-danger-tint: #fdeceb;
+  --color-muted-tint: #eef1ef;
+
+  --font-sans: var(--font-anuphan), ui-sans-serif, system-ui, sans-serif;
+  --font-route: var(--font-overpass), var(--font-anuphan), ui-sans-serif, sans-serif;
+
+  --radius-sign: 14px;
+}
+
+html {
+  background: var(--color-ground);
+}
+
+body {
+  background: var(--color-ground);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-reflect);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-reflect);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.on-sign :focus-visible {
+  outline-color: var(--color-reflect);
+}
+
+/* Logo green is light: text on it is dark ink, never white. Logo red marks a few accents. */
+.sign-panel,
+.sign-panel-sm {
+  color: var(--color-on-sign);
+}
+.sign-panel .text-white,
+.sign-panel-sm .text-white {
+  color: var(--color-on-sign);
+}
+.sign-panel .text-sign-ink,
+.sign-panel-sm .text-sign-ink {
+  color: var(--color-on-sign-2);
+}
+
+input,
+textarea,
+select {
+  caret-color: var(--color-sign);
+}
+
+/* Date pickers: iOS Safari gives them a fixed intrinsic width that overflows narrow screens. */
+input[type="date"],
+input[type="datetime-local"] {
+  min-width: 0;
+  max-width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+}
+input[type="date"]::-webkit-date-and-time-value,
+input[type="datetime-local"]::-webkit-date-and-time-value {
+  text-align: left;
+}
+
+a {
+  text-underline-offset: 3px;
+}
+
+* {
+  scrollbar-color: var(--color-line-strong) transparent;
+}
+
+/* Banner lettering over photos: a dark shadow keeps white type legible on any picture. */
+.hero-title {
+  text-shadow:
+    0 2px 0 rgba(10, 20, 4, 0.55),
+    0 6px 18px rgba(0, 0, 0, 0.55);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Sign panel: green ground with the white inner keyline of a DOH guide sign. */
+.sign-panel {
+  background: var(--color-sign);
+  border-radius: var(--radius-sign);
+  box-shadow:
+    inset 0 0 0 5px var(--color-sign),
+    inset 0 0 0 8px #fff,
+    inset 0 0 0 10px var(--color-reflect);
+}
+
+.sign-panel-sm {
+  background: var(--color-sign);
+  border-radius: 10px;
+  box-shadow:
+    inset 0 0 0 3px var(--color-sign),
+    inset 0 0 0 5px #fff,
+    inset 0 0 0 6px var(--color-reflect);
+}
+
+main {
+  overflow-x: clip;
+}
+
+/*
+  Scroll reveal, CSS only (scroll-driven animations). Text and pictures move into place as they scroll in:
+  - h1 slides in from the left, h2 drops in from above, the text under a heading rises from below
+  - cards in a row come from their own side (left column from the left, right from the right, middle up)
+  - photos zoom in (the frame grows into place) while the picture inside zooms out (settles from close-up);
+    the picture follows its frame's timeline because the frame clips (overflow: hidden) and would otherwise
+    be its scroll container
+  Browsers without animation-timeline simply show everything; forms and search results never move.
+*/
+@keyframes reveal-left {
+  from { opacity: 0; transform: translateX(-56px); }
+}
+@keyframes reveal-right {
+  from { opacity: 0; transform: translateX(56px); }
+}
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(40px); }
+}
+@keyframes reveal-down {
+  from { opacity: 0; transform: translateY(-32px); }
+}
+@keyframes reveal-zoom-in {
+  from { opacity: 0; transform: scale(0.86); }
+}
+@keyframes reveal-zoom-out {
+  from { transform: scale(1.22); }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    main h1,
+    main h2,
+    main h1 + p,
+    main h2 + p,
+    main .grid > *,
+    main table,
+    main [data-photo] {
+      view-timeline-name: --photo;
+    }
+    main [data-photo] {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+    main h1 {
+      animation-name: reveal-left;
+    }
+    main h2 {
+      animation-name: reveal-down;
+    }
+    main [data-photo] {
+      animation-name: reveal-zoom-in;
+    }
+    main [data-photo] img {
+      animation: reveal-zoom-out linear both;
+      animation-timeline: --photo;
+      animation-range: entry 0% cover 50%;
+    }
+    @media (min-width: 768px) {
+      main .grid > :nth-child(3n + 1) {
+        animation-name: reveal-left;
+      }
+      main .grid > :nth-child(3n) {
+        animation-name: reveal-right;
+      }
+      main .grid.md\:grid-cols-2 > :nth-child(2n + 1),
+      main .grid.sm\:grid-cols-2 > :nth-child(2n + 1) {
+        animation-name: reveal-left;
+      }
+      main .grid.md\:grid-cols-2 > :nth-child(2n),
+      main .grid.sm\:grid-cols-2 > :nth-child(2n) {
+        animation-name: reveal-right;
+      }
+    }
+    /* a photo that is itself a card in a row keeps the row's slide; its picture still zooms out */
+    main .grid > [data-photo]:nth-child(n) {
+      animation-name: reveal-zoom-in;
+    }
+    main section > ul:not(.grid),
+    main dl {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+    /* no motion inside forms, nested grids, the home banner (it has its own entrance) or lists marked
+       data-static (search results) */
+    main [data-hero] *,
+    main [data-static] > *,
+    main [data-static] [data-photo],
+    main [data-static] [data-photo] img,
+    main form,
+    main form *,
+    main .grid .grid > *,
+    main .grid > :has(form) {
+      animation: none;
+    }
+  }
+}
+
+/* Krathong candle: the flame flickers and casts a warm glow. */
+.krathong-flame {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  filter: drop-shadow(0 0 1.5px #fde047) drop-shadow(0 0 3px #f59e0b);
+}
+@keyframes krathong-flicker {
+  0%, 100% { transform: scale(1, 1) rotate(0deg); filter: drop-shadow(0 0 1.5px #fde047) drop-shadow(0 0 3px #f59e0b); }
+  20% { transform: scale(0.88, 1.18) rotate(-6deg); filter: drop-shadow(0 0 2.5px #fde047) drop-shadow(0 0 5px #f59e0b); }
+  45% { transform: scale(1.1, 0.86) rotate(4deg); filter: drop-shadow(0 0 1px #fde047) drop-shadow(0 0 2px #f59e0b); }
+  70% { transform: scale(0.94, 1.12) rotate(-2deg); filter: drop-shadow(0 0 2px #fde047) drop-shadow(0 0 4px #f59e0b); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .krathong-flame {
+    animation: krathong-flicker 0.9s ease-in-out infinite;
+  }
+}
+
+/* Home banner entrance on page load: the photo stays still; the lettering slides and zooms in. */
+@keyframes hero-zoom {
+  from { opacity: 0; transform: scale(0.82); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  main [data-hero] .hero-in-left,
+  main [data-hero] .hero-in-right,
+  main [data-hero] .hero-in-up,
+  main [data-hero] .hero-in-down,
+  main [data-hero] .hero-in-zoom {
+    animation: reveal-left 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-timeline: auto;
+  }
+  main [data-hero] .hero-in-right {
+    animation-name: reveal-right;
+  }
+  main [data-hero] .hero-in-up {
+    animation-name: reveal-up;
+  }
+  main [data-hero] .hero-in-down {
+    animation-name: reveal-down;
+  }
+  main [data-hero] .hero-in-zoom {
+    animation-name: hero-zoom;
+    transform-origin: left center;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sign-arrive {
+    animation: sign-arrive 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@keyframes sign-arrive {
+  from {
+    transform: translateX(-10px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+/*
+  Table headers stay in view while scrolling, on every page. Each table sits in a sideways-scrolling box
+  (overflow-x-auto), and a sticky header can only stick inside its scrolling box, so the box is also limited to the
+  window height and scrolls down inside it; the header row then stays at the top of the box.
+*/
+.overflow-x-auto:has(> table > thead) {
+  max-height: calc(100dvh - 5rem);
+  overflow-y: auto;
+  overscroll-behavior-y: auto;
+}
+.overflow-x-auto > table > thead th {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--color-ground);
+  box-shadow: inset 0 -1px 0 var(--color-line);
+}
+
+@media print {
+  .overflow-x-auto:has(> table > thead) {
+    max-height: none;
+    overflow: visible;
+  }
+}

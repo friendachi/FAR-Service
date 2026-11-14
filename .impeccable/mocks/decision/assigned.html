@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=Big+Shoulders+Stencil+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1440px;height:900px;overflow:hidden;font-family:Anuphan,sans-serif;background:#F2F4F1;color:#1A1F1C}
+.top{height:64px;background:#0E5A36;color:#fff;display:flex;align-items:center;padding:0 40px;gap:40px}
+.logo{font-family:'Big Shoulders Stencil Display';font-size:30px;font-weight:800;letter-spacing:.04em}
+.top nav{display:flex;gap:28px;font-size:15px;opacity:.9}
+.top .login{margin-left:auto;border:2px solid #fff;padding:8px 18px;font-weight:600}
+.lane{height:6px;background:repeating-linear-gradient(90deg,#fff 0 60px,transparent 60px 90px);background-color:#0E5A36}
+.wrap{display:grid;grid-template-columns:420px 1fr;height:830px}
+.side{background:#fff;padding:36px 40px;border-right:1px solid #D6DBD7}
+h1{font-size:34px;line-height:1.2;font-weight:700;margin-bottom:12px}
+.side p{color:#56605A;font-size:15px;margin-bottom:28px}
+label{display:block;font-size:13px;font-weight:600;color:#56605A;margin:16px 0 6px}
+.f{height:48px;border:1.5px solid #C9D0CB;display:flex;align-items:center;padding:0 14px;font-size:15px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid #0E5A36}
+.seg div{height:46px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600}
+.seg .on{background:#0E5A36;color:#fff}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn{margin-top:26px;height:52px;background:#0E5A36;color:#fff;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center}
+.main{padding:32px 40px}
+.yh{display:flex;align-items:baseline;gap:16px;margin-bottom:6px}
+.yh h2{font-size:22px}
+.yh span{color:#56605A;font-size:14px}
+.legend{display:flex;gap:20px;font-size:13px;color:#56605A;margin:10px 0 18px}
+.legend i{display:inline-block;width:14px;height:14px;margin-right:6px;vertical-align:-2px}
+.yard{background:#2B302D;padding:22px;display:grid;grid-template-columns:repeat(8,1fr);gap:0;border-top:4px solid #fff;border-bottom:4px solid #fff}
+.bay{height:150px;border-left:3px solid #fff;padding:12px 10px;display:flex;flex-direction:column;justify-content:space-between;color:#fff}
+.bay:last-child{border-right:3px solid #fff}
+.code{font-family:'Big Shoulders Stencil Display';font-size:40px;font-weight:800;line-height:1}
+.bay small{font-size:12px;opacity:.85}
+.bay .t{font-size:13px;font-weight:600}
+.free{background:#0E5A36}
+.hold{background:#5A5F5B;opacity:.75}
+.svc{background:repeating-linear-gradient(45deg,#2B302D 0 10px,#F2C230 10px 20px)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.c{background:#fff;border:1px solid #D6DBD7;padding:16px}
+.c .k{font-family:'Big Shoulders Stencil Display';font-size:24px;color:#0E5A36}
+.c h3{font-size:16px;margin:4px 0}
+.c .p{display:flex;justify-content:space-between;font-size:14px;margin-top:10px;border-top:1px solid #E3E7E4;padding-top:10px}
+.c b{font-size:18px}
+</style></head><body>
+<div class="top"><span class="logo">FAR SERVICE</span><nav><span>ค้นหาหาง</span><span>ลานจอด</span><span>เอกสารที่ต้องใช้</span><span>ติดต่อ</span></nav><span class="login">เข้าสู่ระบบ</span></div>
+<div class="lane"></div>
+<div class="wrap">
+<aside class="side">
+<h1>เช่าหางเทรลเลอร์<br>รับเองที่ลาน คืนลานไหนก็ได้</h1>
+<p>เลือกประเภทหาง ลานรับ และช่วงวัน ระบบบอกเรทที่ใช้และเงินค้ำประกันทันที</p>
+<label>ประเภทหาง</label>
+<div class="seg"><div class="on">พื้นเรียบ</div><div>ก้างปลา</div><div>โลว์เบด</div></div>
+<label>ลานรับหาง</label><div class="f">ลานบางพระ · ศรีราชา</div>
+<div class="row"><div><label>วันรับ</label><div class="f">12 ธ.ค. 2569</div></div><div><label>วันคืน</label><div class="f">22 ธ.ค. 2569</div></div></div>
+<div class="btn">ค้นหาหางว่าง · 10 วัน ใช้เรทรายสัปดาห์</div>
+</aside>
+<main class="main">
+<div class="yh"><h2>ลานบางพระ — แถว B</h2><span>12–22 ธ.ค. 2569 · หางพื้นเรียบ</span></div>
+<div class="legend"><span><i style="background:#0E5A36"></i>ว่างตลอดช่วง</span><span><i style="background:#5A5F5B"></i>มีจองชน</span><span><i style="background:#F2C230"></i>ซ่อมบำรุง</span></div>
+<div class="yard">
+<div class="bay free"><span class="code">B-01</span><span class="t">พื้นเรียบ 40 ฟุต<br><small>3 เพลา</small></span></div>
+<div class="bay free"><span class="code">B-02</span><span class="t">พื้นเรียบ 40 ฟุต<br><small>3 เพลา</small></span></div>
+<div class="bay hold"><span class="code">B-03</span><span class="t">ว่าง 24 ธ.ค.<br><small>ตัวอย่าง</small></span></div>
+<div class="bay free"><span class="code">B-04</span><span class="t">พื้นเรียบ 45 ฟุต<br><small>3 เพลา</small></span></div>
+<div class="bay svc"><span class="code">B-05</span><span class="t">ซ่อมเบรก</span></div>
+<div class="bay free"><span class="code">B-06</span><span class="t">พื้นเรียบ 40 ฟุต<br><small>2 เพลา</small></span></div>
+<div class="bay hold"><span class="code">B-07</span><span class="t">ว่าง 15 ธ.ค.</span></div>
+<div class="bay free"><span class="code">B-08</span><span class="t">พื้นเรียบ 40 ฟุต<br><small>3 เพลา</small></span></div>
+</div>
+<div class="cards">
+<div class="c"><div class="k">B-01</div><h3>หางพื้นเรียบ 40 ฟุต 3 เพลา</h3><div class="p"><span>10 วัน (เรทรายสัปดาห์)</span><b>฿12,000</b></div><div class="p"><span>เงินค้ำประกัน (ได้คืน)</span><b>฿20,000</b></div></div>
+<div class="c"><div class="k">B-02</div><h3>หางพื้นเรียบ 40 ฟุต 3 เพลา</h3><div class="p"><span>10 วัน (เรทรายสัปดาห์)</span><b>฿12,000</b></div><div class="p"><span>เงินค้ำประกัน (ได้คืน)</span><b>฿20,000</b></div></div>
+<div class="c"><div class="k">B-04</div><h3>หางพื้นเรียบ 45 ฟุต 3 เพลา</h3><div class="p"><span>10 วัน (เรทรายสัปดาห์)</span><b>฿13,500</b></div><div class="p"><span>เงินค้ำประกัน (ได้คืน)</span><b>฿20,000</b></div></div>
+</div>
+</main></div>
+</body></html>

@@ -1,0 +1,379 @@
+{
+ "models": [
+  {
+   "code": "SK20-2",
+   "type": "SKELETAL",
+   "name": "หางก้างปลา 20 ฟุต 2 เพลา",
+   "axles": 2,
+   "length_ft": 20,
+   "rate_plan": "MONTHLY_TIERED",
+   "monthly_rate_1_5": 8500,
+   "monthly_rate_6_11": 8500,
+   "monthly_rate_12": 8500,
+   "deposit": 20000,
+   "tyre_fee": 100,
+   "tyre_count": 8,
+   "description": "ไม่รวมยาง · บริการใส่ยาง 100 บาท/เส้น",
+   "sort_order": 0
+  },
+  {
+   "code": "SK40-2",
+   "type": "SKELETAL",
+   "name": "หางก้างปลา 40 ฟุต 2 เพลา",
+   "axles": 2,
+   "length_ft": 40,
+   "rate_plan": "MONTHLY_TIERED",
+   "monthly_rate_1_5": 9000,
+   "monthly_rate_6_11": 8500,
+   "monthly_rate_12": 8000,
+   "deposit": 20000,
+   "tyre_fee": 100,
+   "tyre_count": 8,
+   "description": "ไม่รวมยาง · บริการใส่ยาง 100 บาท/เส้น",
+   "sort_order": 1
+  },
+  {
+   "code": "SK40-3",
+   "type": "SKELETAL",
+   "name": "หางก้างปลา 40 ฟุต 3 เพลา",
+   "axles": 3,
+   "length_ft": 40,
+   "rate_plan": "MONTHLY_TIERED",
+   "monthly_rate_1_5": 12500,
+   "monthly_rate_6_11": 12000,
+   "monthly_rate_12": 11500,
+   "deposit": 20000,
+   "tyre_fee": 100,
+   "tyre_count": 12,
+   "description": "ไม่รวมยาง · บริการใส่ยาง 100 บาท/เส้น",
+   "sort_order": 2
+  },
+  {
+   "code": "FB-3",
+   "type": "FLATBED",
+   "name": "หางพื้นเรียบ 3 เพลา",
+   "axles": 3,
+   "rate_plan": "MONTHLY_TIERED",
+   "monthly_rate_1_5": 13000,
+   "monthly_rate_6_11": 12500,
+   "monthly_rate_12": 12000,
+   "deposit": 20000,
+   "tyre_fee": 100,
+   "tyre_count": 12,
+   "description": "ไม่รวมยาง · บริการใส่ยาง 100 บาท/เส้น",
+   "sort_order": 3
+  },
+  {
+   "code": "LB3-STD",
+   "type": "LOWBED",
+   "name": "หางโลว์เบด 3 เพลา มาตรฐาน",
+   "axles": 3,
+   "width_m": 3.0,
+   "length_m": 12.5,
+   "deck_length": "6.9",
+   "deck_height_m": 1.1,
+   "rate_plan": "DAILY_MONTHLY",
+   "daily_rate": 3000,
+   "monthly_rate": 30000,
+   "deposit": 30000,
+   "sort_order": 4,
+   "tyre_fee": 0,
+   "tyre_count": 0,
+   "weekly_rate": 15000,
+   "description": "รวมยาง · Tires included"
+  },
+  {
+   "code": "LB3-SP",
+   "type": "LOWBED",
+   "name": "หางโลว์เบด 3 เพลา สเปคพิเศษ",
+   "axles": 3,
+   "width_m": 3.0,
+   "length_m": 16,
+   "deck_length": "12.5",
+   "deck_height_m": 0.9,
+   "rate_plan": "DAILY_MONTHLY",
+   "daily_rate": 5000,
+   "monthly_rate": 50000,
+   "deposit": 30000,
+   "sort_order": 5,
+   "tyre_fee": 0,
+   "tyre_count": 0,
+   "weekly_rate": 25000,
+   "description": "รวมยาง · Tires included"
+  },
+  {
+   "code": "LB3-SPO",
+   "type": "LOWBED",
+   "name": "หางโลว์เบด 3 เพลา สเปคพิเศษ ล้อเปิด",
+   "axles": 3,
+   "width_m": 3,
+   "length_m": 16,
+   "deck_length": "8",
+   "deck_height_m": 0.8,
+   "rate_plan": "DAILY_MONTHLY",
+   "daily_rate": 5000,
+   "monthly_rate": 50000,
+   "deposit": 30000,
+   "sort_order": 6,
+   "tyre_fee": 0,
+   "tyre_count": 0,
+   "weekly_rate": 25000,
+   "description": "รวมยาง · Tires included"
+  },
+  {
+   "code": "LB2-2S",
+   "type": "LOWBED",
+   "name": "หางโลว์เบด 2 เพลา สเปคพิเศษ 2 สเตป",
+   "axles": 2,
+   "width_m": 2.55,
+   "length_m": 12.5,
+   "deck_length": "6.15",
+   "deck_height_m": 0.65,
+   "rate_plan": "DAILY_MONTHLY",
+   "daily_rate": 8500,
+   "monthly_rate": 80000,
+   "deposit": 30000,
+   "sort_order": 7,
+   "tyre_fee": 0,
+   "tyre_count": 0,
+   "weekly_rate": 40000,
+   "description": "รวมยาง · Tires included"
+  },
+  {
+   "code": "LB2-STD",
+   "type": "LOWBED",
+   "name": "หางโลว์เบด 2 เพลา สเปคมาตรฐาน",
+   "axles": 2,
+   "rate_plan": "DAILY_MONTHLY",
+   "daily_rate": 2700,
+   "monthly_rate": 27000,
+   "deposit": 30000,
+   "sort_order": 4,
+   "tyre_fee": 0,
+   "tyre_count": 0,
+   "weekly_rate": 13500,
+   "width_m": 3.0,
+   "deck_length": "6.9",
+   "deck_height_m": 1.1,
+   "description": "รวมยาง · Tires included"
+  }
+ ],
+ "trailers": [
+  {
+   "no": 1,
+   "code": "SK01",
+   "model": "SK40-2",
+   "plate": "75-0403",
+   "status": "AVAILABLE",
+   "yard": "NY"
+  },
+  {
+   "no": 2,
+   "code": "SK02",
+   "model": "SK40-2",
+   "plate": "72-9004",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 3,
+   "code": "SK03",
+   "model": "SK40-2",
+   "plate": "71-9021",
+   "status": "AVAILABLE",
+   "yard": "NY"
+  },
+  {
+   "no": 4,
+   "code": "SK04",
+   "model": "SK40-2",
+   "plate": "73-0855",
+   "status": "AVAILABLE",
+   "yard": "BP"
+  },
+  {
+   "no": 5,
+   "code": "SK05",
+   "model": "SK40-2",
+   "plate": "73-0856",
+   "status": "AVAILABLE",
+   "yard": "NY"
+  },
+  {
+   "no": 6,
+   "code": "SK06",
+   "model": "SK40-3",
+   "plate": "73-0612",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 7,
+   "code": "SK07",
+   "model": "SK40-3",
+   "plate": "73-0616",
+   "status": "AVAILABLE",
+   "yard": "BP"
+  },
+  {
+   "no": 8,
+   "code": "SK08",
+   "model": "SK40-3",
+   "plate": "73-0617",
+   "status": "AVAILABLE",
+   "yard": "BP"
+  },
+  {
+   "no": 9,
+   "code": "SK09",
+   "model": "SK40-3",
+   "plate": "73-0618",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 10,
+   "code": "FB01",
+   "model": "FB-3",
+   "plate": "73-4671",
+   "status": "AVAILABLE",
+   "yard": "NY"
+  },
+  {
+   "no": 11,
+   "code": "FB02",
+   "model": "FB-3",
+   "plate": "74-4875",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 12,
+   "code": "FB03",
+   "model": "FB-3",
+   "plate": "74-4533",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 13,
+   "code": "FB04",
+   "model": "FB-3",
+   "plate": "74-4537",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 14,
+   "code": "FB05",
+   "model": "FB-3",
+   "plate": "74-4538",
+   "status": "AVAILABLE",
+   "yard": "NY"
+  },
+  {
+   "no": 15,
+   "code": "FB06",
+   "model": "FB-3",
+   "plate": "74-4539",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 16,
+   "code": "FB07",
+   "model": "FB-3",
+   "plate": "74-4540",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 17,
+   "code": "FB08",
+   "model": "FB-3",
+   "plate": "74-8293",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 18,
+   "code": "FB09",
+   "model": "FB-3",
+   "plate": "74-8294",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 19,
+   "code": "FB10",
+   "model": "FB-3",
+   "plate": "74-8295",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 20,
+   "code": "FB11",
+   "model": "FB-3",
+   "plate": "74-8296",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 21,
+   "code": "FB12",
+   "model": "FB-3",
+   "plate": "75-0151",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 22,
+   "code": "LB01",
+   "model": "LB3-STD",
+   "plate": "73-6319",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 23,
+   "code": "LB02",
+   "model": "LB3-STD",
+   "plate": "72-5944",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 24,
+   "code": "LB03",
+   "model": "LB3-STD",
+   "plate": "75-0137",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 25,
+   "code": "LB04",
+   "model": "LB3-SP",
+   "plate": "63-0803",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 26,
+   "code": "LB05",
+   "model": "LB3-SPO",
+   "plate": "63-0854",
+   "status": "RENTED",
+   "yard": "BP"
+  },
+  {
+   "no": 27,
+   "code": "LB06",
+   "model": "LB2-2S",
+   "plate": "74-5117",
+   "status": "RENTED",
+   "yard": "BP"
+  }
+ ]
+}
