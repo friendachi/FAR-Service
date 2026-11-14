@@ -21,7 +21,7 @@ export const photoSlots = [
   { id: "AXLE_LEFT", label: "เพลาซ้าย", guide: "axle-left" },
   { id: "AXLE_RIGHT", label: "เพลาขวา", guide: "axle-right" },
   { id: "DRIVER_TRACTOR", label: "คนยืนกับหัวลาก", guide: "driver-tractor" },
-  { id: "ID_CARD", label: "บัตรประชาชนคนรับหางเทรลเลอร์", guide: "id-card" },
+  { id: "ID_CARD", label: "บัตรประชาชนคนรับหางเทรลเลอร์", guide: "id-card-full" },
   { id: "LICENSE_FRONT", label: "ใบขับขี่คนรับหางเทรลเลอร์ - ด้านหน้า", guide: "license-front" },
   { id: "LICENSE_BACK", label: "ใบขับขี่คนรับหางเทรลเลอร์ - ด้านหลัง", guide: "license-back" },
 ] as const;

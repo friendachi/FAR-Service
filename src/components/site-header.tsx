@@ -12,11 +12,12 @@ import { getRole, roleHome, roleLabel } from "@/lib/session";
 import { LangSwitch } from "./lang";
 import { SignOutButton } from "./sign-out-button";
 import { T } from "./t";
+import { MobileMenu } from "./mobile-menu";
 
 const nav = [
   { href: "/about", th: "เกี่ยวกับเรา", en: "About us" },
   { href: "/trailers", th: "หางให้เช่า", en: "Our trailers" },
-  { href: "/services", th: "บริการ", en: "Services" },
+  { href: "/services", th: "บริการเสริม", en: "Extra services" },
   { href: "/yards", th: "ลานจอด", en: "Yards" },
   { href: "/knowledge", th: "สาระน่ารู้", en: "Know-how" },
   { href: "/documents", th: "เอกสารทำสัญญา", en: "Documents" },
@@ -112,13 +113,15 @@ export async function SiteHeader() {
               <FileText className="size-4" aria-hidden />
               <T th="ขอใบเสนอราคา" en="Get a quote" />
             </Link>
-            <details className="relative lg:hidden">
-              <summary
+            <MobileMenu
+              className="relative lg:hidden"
+              summary={<summary
                 className="flex size-10 cursor-pointer list-none items-center justify-center rounded-lg bg-reflect text-white [&::-webkit-details-marker]:hidden"
                 aria-label="เปิดเมนู · Menu"
               >
                 <Menu className="size-5" aria-hidden />
-              </summary>
+              </summary>}
+            >
               <nav className="absolute right-0 top-12 w-60 rounded-xl border border-line bg-paper p-2 text-ink shadow-[0_12px_32px_-12px_rgba(0,59,32,0.35)]">
                 <Link href="/quote" className={cx(buttonClass("primary", "md"), "mb-1 w-full")}>
                   <T th="ขอใบเสนอราคา" en="Get a quote" />
@@ -129,7 +132,7 @@ export async function SiteHeader() {
                   </Link>
                 ))}
               </nav>
-            </details>
+            </MobileMenu>
           </div>
         </div>
       </div>
